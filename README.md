@@ -3,26 +3,25 @@
 The following API allows for the logging of metrics. It provides and endpoint to create a metric based on key and value.
 The summation of the metric reported for the last hour is available also through an endpoint as outlined below.
 
--   **URL**
-    <_/metric/:key_>
+* **URL**
+<_/metric/:key_>
 
--   **Method:**
-    `POST`
+* **Method:**
+`POST`
 
--   **URL Params**
+*  **URL Params**
 
-**Required:**
-`key=[string]`
-**Example:**
-<_/metric/active_visitors_>
+ **Required:**
+    `key=[string]`
+ **Example:**
+ <_/metric/active_visitors_>
 
--   **Body**
+* **Body**
 
-    **Required:**
+ **Required:**
     `value=[integer]`
-
-```
-{
-  "value": 10
-}
-```
+ ```
+ {
+	  "value": 10
+ }
+ ```
