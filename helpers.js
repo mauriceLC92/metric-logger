@@ -4,7 +4,9 @@ const fastJson = require('fast-json-stringify');
 exports.calculateValuesInLastHour = (requestTime, parsedMetrics) => {
     let totalInLastHour = 0;
     const timeOneHourAgo = moment.utc(requestTime).subtract(1, 'hour');
+    console.log('timeOneHourAgo', timeOneHourAgo.toString())
     parsedMetrics.forEach((metric) => {
+        console.log(moment.utc(metric.date).toString())
         timeOneHourAgo.isBefore(moment.utc(metric.date))
             ? (totalInLastHour += metric.value)
             : 0;

@@ -6,6 +6,10 @@ const {
 } = require('./helpers');
 
 async function routes(fastify, options) {
+    fastify.get('/', async (request, reply) => {
+        return { hello: 'world' }
+    })
+    
     fastify.get(
         '/metric/:key/sum',
         { schema: { params: { key: true } } },
@@ -27,7 +31,7 @@ async function routes(fastify, options) {
             return reply.send(totalInLastHour);
         }
     );
-    // Need to add validation
+
     fastify.post(
         '/metric/:key',
         { schema: postRequestSchema },
