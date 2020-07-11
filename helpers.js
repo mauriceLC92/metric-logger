@@ -5,7 +5,6 @@ exports.calculateValuesInLastHour = (requestTime, parsedMetrics) => {
     let totalInLastHour = 0;
     const timeOneHourAgo = moment.utc(requestTime).subtract(1, 'hour');
     parsedMetrics.forEach((metric) => {
-        console.log(metric);
         timeOneHourAgo.isBefore(moment.utc(metric.date))
             ? (totalInLastHour += metric.value)
             : 0;
