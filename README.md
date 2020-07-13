@@ -51,5 +51,7 @@ The API code has been seperated into isolated modules, keeping in the spirit of 
 * **Example response**
 
  ```
- 33
+{
+  "value": 10
+}
  ```
