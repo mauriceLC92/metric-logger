@@ -3,6 +3,7 @@ const {
     calculateValuesInLastHour,
     postRequestSchema,
     stringify,
+    generateNotFoundError,
 } = require('./helpers');
 
 async function routes(fastify, options) {
@@ -23,6 +24,9 @@ async function routes(fastify, options) {
                 0,
                 -1
             );
+            if(rawMetrics.length === 0) {
+                return generateNotFoundError(reply, request.params.key)
+            }
             const parsedMetrics = rawMetrics.map((metric) =>
                 JSON.parse(metric)
             );

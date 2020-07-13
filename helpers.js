@@ -47,3 +47,11 @@ exports.postRequestSchema = {
     body: bodyJsonSchema,
     params: paramsJsonSchema,
 };
+
+exports.generateNotFoundError = (reply, key) => {
+    const error = new Error();
+    error.code = 'Not Found Error';
+    error.message = `Key: '${key}' not found`;
+    error.statusCode = 404;
+    return reply.send(error);
+}

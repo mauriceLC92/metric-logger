@@ -10,9 +10,8 @@ fastify.register(require('fastify-redis'), {
 
 const start = async () => {
     try {
-        await fastify.listen(process.env.PORT, '0.0.0.0');
+        await fastify.listen(8080);
     } catch (err) {
-        console.log('err', JSON.stringify(err, null, 4));
         fastify.log.error(err);
         process.exit(1);
     }
