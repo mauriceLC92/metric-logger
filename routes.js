@@ -9,7 +9,9 @@ async function routes(fastify, options) {
     fastify.get('/', async (request, reply) => {
         return { hello: 'world' }
     })
-    
+    /**
+     * If you cannot find he key - send a not found error
+     */
     fastify.get(
         '/metric/:key/sum',
         { schema: { params: { key: true } } },
@@ -28,7 +30,9 @@ async function routes(fastify, options) {
                 requestTime,
                 parsedMetrics
             );
-            return reply.send(totalInLastHour);
+            return reply.send({
+                value: totalInLastHour
+            });
         }
     );
 
