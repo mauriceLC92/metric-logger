@@ -13,7 +13,7 @@ The API code has been seperated into isolated modules, keeping in the spirit of 
 ### API
 
 * **URL**
-<_/metric/:key_>
+_base_url/metric/:key_
 
 * **Method:**
 `POST`
@@ -23,7 +23,7 @@ The API code has been seperated into isolated modules, keeping in the spirit of 
  **Required:**
     `key=[string]`
  **Example:**
- <_/metric/active_visitors_>
+ _base_url/metric/active_visitors_
 
 * **Body**
 
@@ -36,7 +36,7 @@ The API code has been seperated into isolated modules, keeping in the spirit of 
  ```
 
 * **URL**
-<_/metric/:key/sum_>
+_base_url/metric/:key/sum_
 
 * **Method:**
 `GET`
@@ -46,7 +46,7 @@ The API code has been seperated into isolated modules, keeping in the spirit of 
  **Required:**
     `key=[string]`
  **Example:**
- <_/metric/active_visitors/sum_>
+ _base_url/metric/active_visitors/sum_
 
 * **Example response**
 
