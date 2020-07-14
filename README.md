@@ -12,13 +12,15 @@ The API code has been seperated into isolated modules, keeping in the spirit of 
 
 ### API
 
+### Create a metric and update it with a value
+
 * **URL**
 _base_url/metric/:key_
 
 * **Method:**
 `POST`
 
-*  **URL Params**
+* **URL Params**
 
  **Required:**
     `key=[string]`
@@ -34,6 +36,7 @@ _base_url/metric/:key_
 	  "value": 10
  }
  ```
+### Get the sum of the metric by key for the last hour
 
 * **URL**
 _base_url/metric/:key/sum_
@@ -41,7 +44,7 @@ _base_url/metric/:key/sum_
 * **Method:**
 `GET`
 
-*  **URL Params**
+* **URL Params**
 
  **Required:**
     `key=[string]`
